@@ -1,5 +1,12 @@
 {
   "dependencies": {
-    "three": "^0.160.0"
+    "three": "^0.160.1",
+    "vite": "^5.0.8"
+  },
+  "scripts": {
+    "start": "vite"
+  },
+  "devDependencies": {
+    "@types/three": "^0.160.0"
   }
 }
