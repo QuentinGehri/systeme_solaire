@@ -10,7 +10,7 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 // Create a scene
 const scene = new THREE.Scene();
 
-scene.background = new THREE.Color(0x22222); 
+scene.background = new THREE.Color(0x22222);
 
 // Create a camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -41,7 +41,7 @@ composer.addPass(bloomPass);
 const sunGeometry = new THREE.SphereGeometry(2, 32, 32);
 const sunTextureLoader = new THREE.TextureLoader();
 const sunTexture = sunTextureLoader.load('./image/soleil.jpg');
-const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture});
+const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture });
 const sun = new THREE.Mesh(sunGeometry, sunMaterial);
 scene.add(sun);
 
@@ -144,6 +144,7 @@ const animate = () => {
 
     terreSphere.position.x = 3.5 * Math.cos(terreOrbitalSpeed * Date.now() * 0.01);
     terreSphere.position.z = 3.5 * Math.sin(terreOrbitalSpeed * Date.now() * 0.01);
+    terreSphere.rotation.y += 0.01;
 
     marsSphere.position.x = 4 * Math.cos(marsOrbitalSpeed * Date.now() * 0.01);
     marsSphere.position.z = 4 * Math.sin(marsOrbitalSpeed * Date.now() * 0.01);
@@ -152,7 +153,7 @@ const animate = () => {
     jupiterSphere.position.z = 4.5 * Math.sin(jupiterOrbitalSpeed * Date.now() * 0.01);
 
     saturneSphere.position.x = 5 * Math.cos(saturneOrbitalSpeed * Date.now() * 0.01);
-    saturneSphere.position.z = 5* Math.sin(saturneOrbitalSpeed * Date.now() * 0.01);
+    saturneSphere.position.z = 5 * Math.sin(saturneOrbitalSpeed * Date.now() * 0.01);
 
     uranusSphere.position.x = 5.5 * Math.cos(uranusOrbitalSpeed * Date.now() * 0.01);
     uranusSphere.position.z = 5.5 * Math.sin(uranusOrbitalSpeed * Date.now() * 0.01);
